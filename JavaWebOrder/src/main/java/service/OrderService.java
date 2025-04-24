@@ -47,21 +47,24 @@ public class OrderService  {
 		return removeOrder(Integer.parseInt(index));
 	}
 	public OrderDTO removeOrder(int index) {
+	
+		String box = orderDAO.getOrder(index).getItem();
 		orderDAO.remove(index);
 		OrderDTO orderDTO = new OrderDTO();
-		orderDTO.setMessage("index=" + index + ".資料移除成功");
+		orderDTO.setMessage( box + ".移除成功");
 		return orderDTO;
 	}
 	
 	//修改單筆
 	public OrderDTO updateOrder(int index, String newItem) {
 		Order order = orderDAO.getOrder(index);
+		String old = order.getItem();
 		order.setItem(newItem);
 		order.setPrice(productDAO.getProduct(newItem).getPrice());
 		orderDAO.update(index, order);
 		// 回報結果
 		OrderDTO orderDTO = new OrderDTO();
-		orderDTO.setMessage("index=" + index + ". 資料修改成功");
+		orderDTO.setMessage(old + " 成功修改成 " + newItem);
 		return orderDTO;
 	}
 

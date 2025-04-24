@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>history</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">	
 		<link rel="stylesheet" href="/JavaWebOrder/css/buttons.css">
 	</head>
@@ -19,7 +19,7 @@
 				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
-							<th>Index</th> <th>Item</th><th>刪除</th><th>修改</th>
+							<th>Index</th><th>Item</th><th>刪除</th><th>修改</th>
 						</tr>
 					</thead>
 					<tbody>

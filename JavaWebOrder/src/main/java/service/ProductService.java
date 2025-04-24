@@ -28,9 +28,9 @@ public class ProductService {
 		return productDAO.findAll()
 						 .stream()		
 						 .filter( p -> message.contains(p.getItem()))    //模糊比對
-						 .findFirst()
-						 .get()
-						 .getPrice();
+						 .findFirst()      // 因為.findFirst()會回傳一個Option<T>
+						 .get()            // 所以需要用.get()把Optional<Product>直接取值
+						 .getPrice();      //最後getprice
 	}
 	
 }
