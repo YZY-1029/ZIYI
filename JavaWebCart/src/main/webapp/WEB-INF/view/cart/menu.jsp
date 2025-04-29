@@ -17,7 +17,7 @@
 	}
 </style>    
 <div style="background: #DDDDDD;padding: 20px">
-	${ username }&nbsp;&nbsp;&nbsp;&nbsp;
+	${ sessionScope.userDTO.username }&nbsp;&nbsp;&nbsp;&nbsp; <!--跟${username}相比之下登入後左上角多了用戶名稱-->
 	👨‍👨‍👧‍👧<a href="/JavaWebCart/user/list">使用者列表</a> | 
 	
 	📄<a href="/JavaWebCart/product/list">商品管理</a> | 

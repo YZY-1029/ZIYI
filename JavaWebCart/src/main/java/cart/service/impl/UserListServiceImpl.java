@@ -9,7 +9,9 @@ import cart.model.entity.User;
 import cart.service.UserListService;
 
 public class UserListServiceImpl implements UserListService {
+	
 	private UserListDAO userListDAO = new UserListDAOImpl();
+	
 	@Override
 	public List<UserDTO> findAllUsers() {
 		// 1.從 userListDAO 取得 List<User>

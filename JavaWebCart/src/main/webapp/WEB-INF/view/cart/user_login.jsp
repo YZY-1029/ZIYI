@@ -38,9 +38,15 @@
 				<div class="pure-controls">
 					<button type="submit" class="pure-button pure-button-primary">登入</button>
 				</div>
+				
 			</fieldset>
 			
 		</form>
-		
+		<form action="/JavaWebCart/user/" action="/JavaWebCart/user/">
+				<button type="submit" >回首頁</button>
+		</form>	
+
 	</body>
+
+	
 </html>
