@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
+// https://drive.google.com/drive/folders/1VOHuw6osnH6q4jgEeGC_H8wdbXyzT72F
 @WebServlet("/user/authcode")
 public class AuthCodeServlet extends HttpServlet {
 
