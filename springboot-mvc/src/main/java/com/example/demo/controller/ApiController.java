@@ -9,6 +9,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +27,10 @@ import com.example.demo.response.ApiResponse;
 @RestController    // 免去撰寫ResponseBody, 但若要透過 JSP 渲染則不適用
 @RequestMapping("/api")  // 以下路徑統一都有 url 前贅
 public class ApiController {
+	
+	// 為了要讓資料寫進 log 裡面  // log 裡面記錄了使用了甚麼行為 // 就是下面的console寫的東西,可是console裡面得東西不會被記錄,但log會被記錄在app.log裡面保存可回朔問題
+	private static final Logger logger = LoggerFactory.getLogger(ApiController.class);
+
 	
 	/* 
 	 * 1. 歡迎頁
@@ -50,6 +57,8 @@ public class ApiController {
 	@GetMapping("/greet")
 	public String greet(@RequestParam(value = "name", required = true) String username,
 						@RequestParam(value = "age", required = false, defaultValue = "0") Integer userage) {	
+	// 要知道資訊就呼叫greet
+		logger.info("執行路徑: /greet 參數: name=" + username + "&age" + userage);
 		String result = String.format("Hi %s %d (%s)",
 				username, userage, userage >= 18 ? "成年" : "未成年");
 		return result;
